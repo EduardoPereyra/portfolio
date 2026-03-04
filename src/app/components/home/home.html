@@ -1,0 +1,82 @@
+<section class="h-[calc(100vh-10rem)] flex flex-col items-center justify-center">
+  <div class="card">
+    <div class="loader">
+      <p>Hi! I am</p>
+      <div class="words">
+        <span
+          class="word bg-linear-to-r from-emerald-500 to-emerald-800 bg-clip-text text-transparent"
+          >Eduardo Jose Pereyra Yraola</span
+        >
+        <span
+          class="word bg-linear-to-r from-emerald-500 to-emerald-800 bg-clip-text text-transparent"
+          >a Fullstack Developer</span
+        >
+        <span
+          class="word bg-linear-to-r from-emerald-500 to-emerald-800 bg-clip-text text-transparent"
+          >a Frontend Developer</span
+        >
+        <span
+          class="word bg-linear-to-r from-emerald-500 to-emerald-800 bg-clip-text text-transparent"
+          >a Backend Developer</span
+        >
+        <span
+          class="word bg-linear-to-r from-emerald-500 to-emerald-800 bg-clip-text text-transparent"
+          >Eduardo Jose Pereyra Yraola</span
+        >
+      </div>
+    </div>
+  </div>
+
+  <section class="flex flex-col items-center justify-center mt-20 mx-10">
+    <p class="text-emerald-700 text-2xl text-justify">
+      React? Angular? Node? You pick the ingredients, I'll write the code. Browse the shelves, add
+      your preferred technologies to the cart, and check out with your contact info. Your
+      custom-built project is just a few clicks away.
+    </p>
+    <button class="mt-12">
+      <a
+        href="store"
+        class="bg-emerald-600 text-xl text-white px-8 py-4 rounded-lg hover:bg-emerald-700 transition-colors duration-300"
+      >
+        Store
+      </a>
+    </button>
+  </section>
+</section>
+
+<section class="info-container flex flex-col gap-20 my-40 mx-10">
+  <p class="bg-teal-50 text-emerald-700 p-4 rounded-lg text-xl">
+    I am a passionate and dedicated fullstack developer with a strong background in both frontend
+    and backend development.
+  </p>
+  <p class="bg-teal-50 text-emerald-700 p-4 rounded-lg text-xl">
+    With a keen eye for detail and a commitment to delivering high-quality solutions, I thrive in
+    dynamic environments where I can apply my skills to create innovative and efficient
+    applications.
+  </p>
+  <p class="bg-teal-50 text-emerald-700 p-4 rounded-lg text-xl">
+    My expertise spans across various technologies, allowing me to seamlessly integrate
+    user-friendly interfaces with robust server-side functionality.
+  </p>
+</section>
+
+<section class="certificates-container flex flex-col items-center justify-center mx-10 mt-60">
+  <h2 class="font-bold text-5xl mb-6 text-emerald-700">Certificates</h2>
+  <div
+    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 xl:gap-10 2xl:gap-30 2xl:mx-40 mx-10 mt-10"
+  >
+    @for (image of images(); track image) {
+      <app-frame
+        [imageName]="image"
+        (selectedCertificate)="selectedCertificate.set($event)"
+      ></app-frame>
+    }
+  </div>
+</section>
+
+@if (selectedCertificate()) {
+  <app-modal
+    [imageName]="selectedCertificate()!"
+    (onClose)="selectedCertificate.set(null)"
+  ></app-modal>
+}

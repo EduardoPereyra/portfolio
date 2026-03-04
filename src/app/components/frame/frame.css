@@ -1,0 +1,19 @@
+.frame-shadow {
+  box-shadow: -3px -3px 12px #999;
+}
+
+.frame-shadow-container {
+  animation: swing 2s infinite alternate ease-in-out;
+}
+
+@keyframes swing {
+  0% {
+    transform-origin: top center;
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform-origin: top center;
+    transform: rotate(2deg);
+  }
+}

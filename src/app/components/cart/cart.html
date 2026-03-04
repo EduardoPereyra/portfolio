@@ -1,0 +1,101 @@
+<div class="cart w-3/4 mx-auto mt-26">
+  <div class="my-4">
+    <h2 class="text-3xl font-bold text-emerald-700">Shopping Cart</h2>
+  </div>
+  <div class="my-2 flex items-center justify-between">
+    <p>Total Items: {{ totalItems$ | async }}</p>
+    @if ((items$ | async) !== undefined && (items$ | async)!.length > 0) {
+      <button
+        (click)="clearCart()"
+        class="cursor-pointer hover:text-red-700 transition-colors duration-300"
+      >
+        Clear
+      </button>
+    }
+  </div>
+
+  @if (loading$ | async) {
+    <div>Loading...</div>
+  }
+  @if (error$ | async; as error) {
+    <div class="error">{{ error }}</div>
+  }
+  <div class="flex flex-col gap-4">
+    @for (item of items$ | async; track item.id) {
+      <app-cart-item [item]="item"></app-cart-item>
+    }
+  </div>
+
+  <form class="flex flex-col gap-4 mt-10">
+    <h1 class="text-xl font-bold text-emerald-700">Contact information</h1>
+    <div class="grid grid-cols-2 justify-between gap-4">
+      <div>
+        <span>Full Name</span>
+        <input
+          type="text"
+          placeholder="John Doe"
+          [formField]="contactForm.fullName"
+          class="border border-emerald-700 px-4 py-2 flex flex-col gap-2 rounded w-full"
+        />
+        @if (contactForm.fullName().touched() && contactForm.fullName().invalid()) {
+          <span class="text-red-700 text-sm mt-1">Full Name is required.</span>
+        }
+      </div>
+      <div>
+        <span>Email</span>
+        <input
+          type="email"
+          placeholder="john.doe@example.com"
+          [formField]="contactForm.email"
+          class="border border-emerald-700 px-4 py-2 flex flex-col gap-2 rounded w-full"
+        />
+        @if (contactForm.email().touched() && contactForm.email().invalid()) {
+          <span class="text-red-700 text-sm mt-1">Please enter a valid email address.</span>
+        }
+      </div>
+      <div>
+        <span>Phone Number</span>
+        <input
+          type="tel"
+          placeholder="(123) 456-7890"
+          [formField]="contactForm.phone"
+          class="border border-emerald-700 px-4 py-2 flex flex-col gap-2 rounded w-full"
+        />
+        @if (contactForm.phone().touched() && contactForm.phone().invalid()) {
+          <span class="text-red-700 text-sm mt-1">Please enter a valid phone number.</span>
+        }
+      </div>
+      <div>
+        <span>Company</span>
+        <input
+          type="text"
+          placeholder="Company Name"
+          [formField]="contactForm.company"
+          class="border border-emerald-700 px-4 py-2 flex flex-col gap-2 rounded w-full"
+        />
+        @if (contactForm.company().touched() && contactForm.company().invalid()) {
+          <span class="text-red-700 text-sm mt-1">Company is required.</span>
+        }
+      </div>
+    </div>
+    <div>
+      <span>Additional Notes</span>
+      <textarea
+        placeholder="Additional Notes"
+        [formField]="contactForm.notes"
+        class="border border-emerald-700 px-4 py-2 flex flex-col gap-2 rounded w-full max-h-100 min-h-15"
+      ></textarea>
+    </div>
+
+    <button
+      type="button"
+      (click)="handleCheckout($event)"
+      [disabled]="
+        (items$ | async) === undefined || (items$ | async)!.length === 0 || contactForm().invalid()
+      "
+      class="mt-6 px-4 py-2 bg-emerald-700 text-white rounded hover:bg-emerald-900 transition-colors duration-300 cursor-pointer disabled:bg-gray-200 disabled:cursor-not-allowed"
+    >
+      Checkout
+    </button>
+  </form>
+</div>

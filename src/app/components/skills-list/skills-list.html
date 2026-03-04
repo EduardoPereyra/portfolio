@@ -1,0 +1,34 @@
+<section class="mb-10 mt-26">
+  <h2 class="font-bold text-4xl mb-3 text-emerald-700">Store</h2>
+  <span class="text-emerald-700 text-lg mb-10">
+    Select the technologies you want me to work with and let's get in touch!
+  </span>
+</section>
+<div class="flex md:flex-row flex-col gap-10">
+  <aside class="mb-10 w-60 pr-15">
+    <h3 class="font-bold text-2xl mb-3 text-emerald-700">Categories</h3>
+    <div
+      class="flex md:flex-wrap flex-no-wrap gap-3 md:flex-col flex-row overflow-x-auto md:w-full w-[calc(100vw-4rem)] md:pb-0 pb-4"
+    >
+      @for (category of categories(); track category) {
+        <button
+          class="px-2 py-2 rounded-full text-sm text-gray-700 transition-colors cursor-pointer md:w-full w-40 shrink-0"
+          [ngClass]="
+            filter() === category
+              ? 'bg-emerald-500 hover:bg-emerald-600'
+              : 'bg-gray-200 hover:bg-gray-300'
+          "
+          [class.text-white]="filter() === category"
+          (click)="setFilter(category)"
+        >
+          {{ category }}
+        </button>
+      }
+    </div>
+  </aside>
+  <div class="flex flex-wrap gap-x-6 gap-y-12 items-start h-full">
+    @for (item of filteredItems(); track item.id) {
+      <app-skill-item [skill]="item"></app-skill-item>
+    }
+  </div>
+</div>

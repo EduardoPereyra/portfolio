@@ -1,0 +1,14 @@
+<div
+  (click)="onClick()"
+  class="frame-shadow frame-shadow-container relative rope p-0 m-0 border-20 border-s-taupe-600 border-bs-taupe-400 border-e-taupe-500 border-be-taupe-700 mb-10 mx-auto min-w-60 cursor-pointer"
+>
+  <div class="frame-shadow p-0 m-0 border-12 border-white">
+    <img
+      class="p-0 m-0 w-full h-auto border-t-2 border-l-2 border-b-2 border-r-2 border-t-gray-500 border-l-gray-500 border-b-gray-300 border-r-gray-300"
+      [ngSrc]="`assets/certificates/${imageName}.jpg`"
+      alt="{{ imageName }}"
+      width="160"
+      height="120"
+    />
+  </div>
+</div>

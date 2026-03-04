@@ -1,0 +1,373 @@
+{
+  "skills": [
+    {
+      "id": "1",
+      "name": "Angular",
+      "img": "assets/skills/angular.gif",
+      "description": "",
+      "experience": "EXPERT",
+      "level": 5,
+      "tag": "Favorite",
+      "tagColor": "bg-amber-500",
+      "categories": ["Frontend"]
+    },
+    {
+      "id": "6",
+      "name": "React",
+      "img": "assets/skills/react.png",
+      "description": "",
+      "experience": "EXPERT",
+      "level": 5,
+      "tag": "Most wanted",
+      "categories": ["Frontend"]
+    },
+    {
+      "id": "2",
+      "name": "TypeScript (ES6)",
+      "img": "assets/skills/typescript.png",
+      "description": "",
+      "experience": "EXPERT",
+      "level": 5,
+      "categories": ["Frontend", "Language", "Backend"]
+    },
+    {
+      "id": "3",
+      "name": "JavaScript",
+      "img": "assets/skills/javascript.png",
+      "description": "",
+      "experience": "EXPERT",
+      "level": 5,
+      "categories": ["Frontend", "Language", "Backend"]
+    },
+    {
+      "id": "4",
+      "name": "HTML",
+      "img": "assets/skills/html.png",
+      "description": "",
+      "experience": "EXPERT",
+      "level": 5,
+      "categories": ["Frontend", "Language"]
+    },
+
+    {
+      "id": "5",
+      "name": "CSS",
+      "img": "assets/skills/css.png",
+      "description": "",
+      "experience": "EXPERT",
+      "level": 5,
+      "categories": ["Frontend", "Language"]
+    },
+    {
+      "id": "7",
+      "name": "Java",
+      "img": "assets/skills/java.png",
+      "description": "",
+      "experience": "ADVANCED",
+      "level": 4,
+      "tag": "Most wanted",
+      "categories": ["Backend", "Language"]
+    },
+    {
+      "id": "8",
+      "name": "Spring Boot",
+      "img": "assets/skills/spring-boot.png",
+      "description": "",
+      "experience": "ADVANCED",
+      "level": 4,
+      "tag": "Most wanted",
+      "categories": ["Backend"]
+    },
+    {
+      "id": "9",
+      "name": "Next.js",
+      "img": "assets/skills/nextjs.jpeg",
+      "description": "",
+      "experience": "EXPERT",
+      "level": 5,
+      "tag": "Favorite",
+      "tagColor": "bg-amber-500",
+      "categories": ["Frontend"]
+    },
+    {
+      "id": "10",
+      "name": "Ionic Framework",
+      "img": "assets/skills/ionic.png",
+      "description": "",
+      "experience": "EXPERT",
+      "level": 5,
+      "tag": "",
+      "categories": ["Frontend"]
+    },
+    {
+      "id": "11",
+      "name": "SCRUM",
+      "img": "assets/skills/scrum.png",
+      "description": "",
+      "experience": "EXPERT",
+      "level": 5,
+      "tag": "Most wanted",
+      "categories": ["Methodology"]
+    },
+    {
+      "id": "12",
+      "name": "Postman",
+      "img": "assets/skills/postman.png",
+      "description": "",
+      "experience": "EXPERT",
+      "level": 5,
+      "tag": "",
+      "categories": ["Testing"]
+    },
+    {
+      "id": "14",
+      "name": "Sass",
+      "img": "assets/skills/sass.png",
+      "description": "",
+      "experience": "EXPERT",
+      "level": 5,
+      "tag": "",
+      "categories": ["Frontend", "Language"]
+    },
+    {
+      "id": "15",
+      "name": "Capacitor",
+      "img": "assets/skills/capacitor.png",
+      "description": "",
+      "experience": "EXPERT",
+      "level": 5,
+      "tag": "",
+      "categories": ["Frontend"]
+    },
+    {
+      "id": "16",
+      "name": "Node.js",
+      "img": "assets/skills/node-js.jpeg",
+      "description": "",
+      "experience": "ADVANCED",
+      "level": 4,
+      "tag": "",
+      "categories": ["Backend"]
+    },
+    {
+      "id": "17",
+      "name": "Git",
+      "img": "assets/skills/git.png",
+      "description": "",
+      "experience": "EXPERT",
+      "level": 5,
+      "tag": "Most wanted",
+      "categories": ["Version Control"]
+    },
+    {
+      "id": "18",
+      "name": "NgRx",
+      "img": "assets/skills/ngrx.png",
+      "description": "",
+      "experience": "ADVANCED",
+      "level": 4,
+      "tag": "",
+      "categories": ["Frontend"]
+    },
+    {
+      "id": "19",
+      "name": "RxJS",
+      "img": "assets/skills/rxjs.png",
+      "description": "",
+      "experience": "ADVANCED",
+      "level": 4,
+      "tag": "",
+      "categories": ["Frontend"]
+    },
+    {
+      "id": "20",
+      "name": "Python",
+      "img": "assets/skills/python.png",
+      "description": "",
+      "experience": "ADVANCED",
+      "level": 4,
+      "tag": "",
+      "categories": ["Backend", "Language"]
+    },
+    {
+      "id": "21",
+      "name": "Sonar",
+      "img": "assets/skills/sonar.png",
+      "description": "",
+      "experience": "ADVANCED",
+      "level": 4,
+      "tag": "Most wanted",
+      "categories": ["Quality Control"]
+    },
+    {
+      "id": "23",
+      "name": "Tailwind CSS",
+      "img": "assets/skills/tailwind.png",
+      "description": "",
+      "experience": "ADVANCED",
+      "level": 4,
+      "tag": "",
+      "categories": ["Frontend", "Language"]
+    },
+    {
+      "id": "24",
+      "name": "Swagger",
+      "img": "assets/skills/swagger.png",
+      "description": "",
+      "experience": "ADVANCED",
+      "level": 4,
+      "tag": "",
+      "categories": ["Backend", "Documentation"]
+    },
+    {
+      "id": "25",
+      "name": "Kubernetes",
+      "img": "assets/skills/kubernetes.png",
+      "description": "",
+      "experience": "INTERMEDIATE",
+      "level": 3,
+      "tag": "",
+      "categories": ["DevOps"]
+    },
+    {
+      "id": "26",
+      "name": "Vitest",
+      "img": "assets/skills/vitest.png",
+      "description": "",
+      "experience": "INTERMEDIATE",
+      "level": 3,
+      "tag": "",
+      "categories": ["Testing"]
+    },
+    {
+      "id": "27",
+      "name": "Jest",
+      "img": "assets/skills/jest.png",
+      "description": "",
+      "experience": "INTERMEDIATE",
+      "level": 3,
+      "tag": "",
+      "categories": ["Testing"]
+    },
+    {
+      "id": "28",
+      "name": "JUnit",
+      "img": "assets/skills/junit.png",
+      "description": "",
+      "experience": "INTERMEDIATE",
+      "level": 3,
+      "tag": "",
+      "categories": ["Testing"]
+    },
+    {
+      "id": "29",
+      "name": "Firebase",
+      "img": "assets/skills/firebase.png",
+      "description": "",
+      "experience": "INTERMEDIATE",
+      "level": 3,
+      "tag": "",
+      "categories": ["Backend", "Database"]
+    },
+    {
+      "id": "30",
+      "name": "Cypress",
+      "img": "assets/skills/cypress.jpg",
+      "description": "",
+      "experience": "INTERMEDIATE",
+      "level": 3,
+      "tag": "",
+      "categories": ["Testing"]
+    },
+    {
+      "id": "31",
+      "name": "Mockito",
+      "img": "assets/skills/mockito.png",
+      "description": "",
+      "experience": "INTERMEDIATE",
+      "level": 3,
+      "tag": "",
+      "categories": ["Testing"]
+    },
+    {
+      "id": "32",
+      "name": "AWS",
+      "img": "assets/skills/aws.png",
+      "description": "",
+      "experience": "INTERMEDIATE",
+      "level": 3,
+      "tag": "",
+      "categories": ["Cloud"]
+    },
+    {
+      "id": "33",
+      "name": "Jenkins",
+      "img": "assets/skills/jenkins.png",
+      "description": "",
+      "experience": "INTERMEDIATE",
+      "level": 3,
+      "tag": "",
+      "categories": ["DevOps"]
+    },
+    {
+      "id": "34",
+      "name": "MongoDB",
+      "img": "assets/skills/mongodb.png",
+      "description": "",
+      "experience": "INTERMEDIATE",
+      "level": 3,
+      "tag": "",
+      "categories": ["Backend", "Database"]
+    },
+    {
+      "id": "35",
+      "name": "PostgreSQL",
+      "img": "assets/skills/postgresql.png",
+      "description": "",
+      "experience": "INTERMEDIATE",
+      "level": 3,
+      "tag": "",
+      "categories": ["Backend", "Database"]
+    },
+    {
+      "id": "36",
+      "name": "MySQL",
+      "img": "assets/skills/mysql.png",
+      "description": "",
+      "experience": "INTERMEDIATE",
+      "level": 3,
+      "tag": "",
+      "categories": ["Backend", "Database"]
+    },
+    {
+      "id": "37",
+      "name": "Confluence",
+      "img": "assets/skills/confluence.png",
+      "description": "",
+      "experience": "INTERMEDIATE",
+      "level": 3,
+      "tag": "",
+      "categories": ["Documentation", "Collaboration"]
+    },
+    {
+      "id": "38",
+      "name": "Docker",
+      "img": "assets/skills/docker.png",
+      "description": "",
+      "experience": "INTERMEDIATE",
+      "level": 3,
+      "tag": "",
+      "categories": ["DevOps"]
+    },
+    {
+      "id": "39",
+      "name": "Jira",
+      "img": "assets/skills/jira.png",
+      "description": "",
+      "experience": "INTERMEDIATE",
+      "level": 3,
+      "tag": "",
+      "categories": ["Collaboration"]
+    }
+  ]
+}
