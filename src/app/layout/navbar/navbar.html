@@ -1,5 +1,5 @@
 <nav class="w-full p-4 shadow-xs bg-emerald-500 fixed top-0 left-0 z-10">
-  <ul class="flex space-x-4 justify-between items-center gap-4">
+  <ul class="flex space-x-4 justify-between items-center md:gap-4 gap-0">
     <li>
       <a href="/" class="text-gray-50 hover:text-emerald-900">
         <img src="assets/images/logo.png" alt="logo" class="w-24 h-auto min-w-12" />
@@ -32,8 +32,7 @@
         </button>
       </form>
     </li>
-    <li class="w-1/4"></li>
-    <li class="w-24 h-auto relative">
+    <li class="w-18 h-auto relative">
       <span
         class="absolute -top-2 left-5 bg-red-500 text-white text-xs rounded-full px-1"
         aria-label="cart items count"
@@ -47,6 +46,124 @@
           aria-hidden="false"
         ></fa-icon>
       </a>
+    </li>
+    <li class="w-18 h-auto">
+      <button
+        id="dropdownDefaultButton"
+        data-dropdown-toggle="dropdown"
+        class="inline-flex items-center justify-center text-gray-50 hover:text-emerald-900 font-medium leading-5 rounded-base text-sm focus:outline-none cursor-pointer"
+        type="button"
+        data-dropdown-offset-distance="-10"
+      >
+        <fa-icon
+          [icon]="faUser"
+          class="text-2xl"
+          aria-label="account items count"
+          aria-hidden="false"
+        ></fa-icon>
+      </button>
+
+      <div
+        id="dropdown"
+        class="z-10 hidden bg-neutral-primary-medium border border-default-medium rounded-base shadow-lg w-44"
+      >
+        <ul class="p-2 text-sm text-body font-medium" aria-labelledby="dropdownDefaultButton">
+          <li>
+            <a
+              download
+              href="/assets/files/Eduardo Jose Pereyra Yraola - Fullstack Developer - CV.pdf"
+              class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded"
+              >Download CV</a
+            >
+          </li>
+          <li>
+            <button
+              id="doubleDropdownButton"
+              data-dropdown-toggle="doubleDropdown"
+              data-dropdown-placement="right-start"
+              type="button"
+              class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded"
+            >
+              Contact
+              <fa-icon
+                [icon]="faAngleRight"
+                class="h-4 w-4 ms-auto"
+                aria-label="phone number"
+                aria-hidden="false"
+              ></fa-icon>
+            </button>
+            <div
+              id="doubleDropdown"
+              class="z-10 hidden bg-neutral-primary-medium border border-default-medium rounded-base shadow-lg w-44"
+            >
+              <ul class="p-2 text-sm text-body font-medium" aria-labelledby="doubleDropdownButton">
+                <li class="flex items-center">
+                  <fa-icon
+                    [icon]="faPhone"
+                    class="text-sm w-4 h-4 me-2"
+                    aria-label="phone number"
+                    aria-hidden="false"
+                  ></fa-icon>
+                  <a
+                    href="tel:+1234567890"
+                    class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded"
+                    >Phone number</a
+                  >
+                </li>
+                <li class="flex items-center">
+                  <fa-icon
+                    [icon]="faEnvelope"
+                    class="text-sm w-4 h-4 me-2"
+                    aria-label="email"
+                    aria-hidden="false"
+                  ></fa-icon>
+                  <a
+                    href="mailto:eduardo.pereyrayraola@gmail.com"
+                    class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded"
+                    >Email</a
+                  >
+                </li>
+                <li class="flex items-center">
+                  <fa-icon
+                    [icon]="faLinkedin"
+                    class="text-sm w-4 h-4 me-2"
+                    aria-label="LinkedIn"
+                    aria-hidden="false"
+                  ></fa-icon>
+                  <a
+                    href="https://www.linkedin.com/in/eduardo-jose-pereyra-yraola/"
+                    target="_blank"
+                    class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded"
+                    >LinkedIn</a
+                  >
+                </li>
+                <li class="flex items-center">
+                  <fa-icon
+                    [icon]="faGithub"
+                    class="text-sm w-4 h-4 me-2"
+                    aria-label="GitHub"
+                    aria-hidden="false"
+                  ></fa-icon>
+                  <a
+                    href="https://github.com/EduardoPereyra"
+                    target="_blank"
+                    class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded"
+                    >Github</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <!-- <li>
+            <a
+              href="#"
+              class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded"
+              >Sign out</a
+            >
+          </li> -->
+        </ul>
+      </div>
     </li>
   </ul>
 </nav>

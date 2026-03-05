@@ -1,9 +1,18 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faCartArrowDown, faMagnifyingGlass, faStore } from '@fortawesome/free-solid-svg-icons';
+import {
+  faCartArrowDown,
+  faMagnifyingGlass,
+  faStore,
+  faUser,
+  faPhone,
+  faEnvelope,
+  faAngleRight,
+} from '@fortawesome/free-solid-svg-icons';
+import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { Store } from '@ngrx/store';
 import { selectCartTotalSkills } from '../../store/selectors/cart.selectors';
-import { form, FormField, required } from '@angular/forms/signals';
+import { form, FormField } from '@angular/forms/signals';
 import { ActivatedRoute, Router } from '@angular/router';
 
 interface SearchData {
@@ -24,6 +33,12 @@ export class Navbar implements OnInit {
   faCartArrowDown = faCartArrowDown;
   faMagnifyingGlass = faMagnifyingGlass;
   faStore = faStore;
+  faUser = faUser;
+  faPhone = faPhone;
+  faLinkedin = faLinkedin;
+  faEnvelope = faEnvelope;
+  faGithub = faGithub;
+  faAngleRight = faAngleRight;
 
   cartAmounts = signal(0);
   searchModel = signal<SearchData>({ search: '' });

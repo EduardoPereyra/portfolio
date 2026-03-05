@@ -1,5 +1,5 @@
 <div
-  class="border rounded w-60 shadow relative border-gray-100 text-emerald-700 cursor-pointer hover:shadow-lg transition-shadow duration-300"
+  class="border rounded md:w-60 w-40 shadow relative border-gray-100 text-emerald-700 cursor-pointer hover:shadow-lg transition-shadow duration-300"
   (mouseover)="showCart = true"
   (mouseleave)="showCart = false"
 >
@@ -39,7 +39,11 @@
       </div>
     }
     <div class="bg-slate-100 w-full py-4">
-      <img [src]="skill.img" [alt]="skill.name" class="w-auto h-16 mx-auto max-w-4/5" />
+      <img
+        [src]="skill.img"
+        [alt]="skill.name"
+        class="w-auto h-16 mx-auto max-w-4/5 object-contain"
+      />
     </div>
     <p class="text-center mt-2 text-xl">{{ skill.name }}</p>
     <div

@@ -108,6 +108,12 @@ This request was sent from my interactive portfolio shop.
     location.href = mailtoLink;
 
     this.clearCart();
-    // this.contactForm.reset();
+    this.contactModel.set({
+      fullName: '',
+      email: '',
+      phone: '',
+      company: '',
+      notes: '',
+    });
   }
 }

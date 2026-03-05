@@ -1,14 +1,14 @@
-<section class="mb-10 mt-26">
+<section class="mb-10 pt-10 md:m-0 m-4">
   <h2 class="font-bold text-4xl mb-3 text-emerald-700">Store</h2>
   <span class="text-emerald-700 text-lg mb-10">
     Select the technologies you want me to work with and let's get in touch!
   </span>
 </section>
-<div class="flex md:flex-row flex-col gap-10">
+<div class="flex md:flex-row flex-col gap-10 md:m-0 m-4 pt-6">
   <aside class="mb-10 w-60 pr-15">
     <h3 class="font-bold text-2xl mb-3 text-emerald-700">Categories</h3>
     <div
-      class="flex md:flex-wrap flex-no-wrap gap-3 md:flex-col flex-row overflow-x-auto md:w-full w-[calc(100vw-4rem)] md:pb-0 pb-4"
+      class="flex md:flex-wrap flex-no-wrap gap-3 md:flex-col flex-row overflow-x-auto md:w-full w-[calc(100vw-1rem)] md:pb-0 pb-4"
     >
       @for (category of categories(); track category) {
         <button
@@ -26,7 +26,7 @@
       }
     </div>
   </aside>
-  <div class="flex flex-wrap gap-x-6 gap-y-12 items-start h-full">
+  <div class="flex flex-wrap gap-x-6 gap-y-12 items-start justify-center md:justify-start h-full">
     @for (item of filteredItems(); track item.id) {
       <app-skill-item [skill]="item"></app-skill-item>
     }
