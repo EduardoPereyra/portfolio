@@ -1,6 +1,5 @@
 .card {
   --bg-color: #111;
-  /* background-color: var(--bg-color); */
   padding: 1rem 2rem;
   border-radius: 1.25rem;
 }
@@ -29,7 +28,7 @@
   position: absolute;
   inset: 0;
   background: linear-gradient(white 10%, transparent 30%, transparent 80%, white 90%);
-  z-index: 20;
+  z-index: 1;
 }
 
 .word {
