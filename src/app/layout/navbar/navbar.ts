@@ -47,12 +47,18 @@ export class Navbar implements OnInit {
 
   ngOnInit() {
     const searchQuery = this.route.snapshot.queryParamMap.get('search') || '';
-    console.log(searchQuery);
-
     this.searchForm.search().value.set(searchQuery);
 
     this.store.select(selectCartTotalSkills).subscribe((total) => {
-      this.cartAmounts.set(total);
+      if (total === 0) {
+        const cart = localStorage.getItem('cart');
+        if (cart) {
+          const parsedCart = JSON.parse(cart);
+          this.cartAmounts.set(parsedCart.length);
+        }
+      } else {
+        this.cartAmounts.set(total);
+      }
     });
   }
 

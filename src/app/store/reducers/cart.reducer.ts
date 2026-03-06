@@ -24,21 +24,32 @@ export const cartReducer = createReducer(
     error: null,
   })),
   on(CartActions.addToCartSuccess, (state, { skill }) => {
-    const existingItemIndex = state.skills.findIndex((i) => i.id === skill.id);
     let updatedItems;
+    let skillsList = [...state.skills];
+
+    if (skillsList.length === 0) {
+      const cart = localStorage.getItem('cart');
+      if (cart) {
+        const parsedCart = JSON.parse(cart);
+        skillsList = parsedCart;
+      }
+    }
+
+    const existingItemIndex = skillsList.findIndex((i) => i.id === skill.id);
 
     if (existingItemIndex >= 0) {
       // Item exists
-      updatedItems = state.skills;
+      updatedItems = skillsList;
     } else {
       // New item
-      updatedItems = [...state.skills, skill];
+      updatedItems = [...skillsList, skill];
     }
+
     return {
       ...state,
       skills: updatedItems,
       loading: false,
-      totalSkills: state.totalSkills + 1,
+      totalSkills: updatedItems.length,
       error: null,
     };
   }),

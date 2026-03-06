@@ -47,8 +47,6 @@ export class CartEffects {
       switchMap(({ skill }) => {
         return of(skill).pipe(
           map((validatedSkill) => {
-            console.log(validatedSkill);
-
             return CartActions.addToCartSuccess({ skill: validatedSkill });
           }),
           catchError((error) => of(CartActions.addToCartFailure({ error: error.message }))),
