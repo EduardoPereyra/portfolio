@@ -82,6 +82,7 @@
 
 .info-container p {
   width: 80%;
+  position: relative;
 }
 
 .info-container p:nth-child(odd) {
@@ -92,6 +93,27 @@
   align-items: flex-end;
   text-align: right;
   margin-left: auto;
+}
+
+.info-container p:nth-child(odd):after,
+.info-container p:nth-child(even):after {
+  content: '';
+  width: 20px;
+  height: 40px;
+  background-color: var(--color-slate-100);
+  position: absolute;
+  bottom: -16px;
+  z-index: -1;
+}
+
+.info-container p:nth-child(odd):after {
+  border-bottom-right-radius: 2rem;
+  left: 20px;
+}
+
+.info-container p:nth-child(even):after {
+  border-bottom-left-radius: 2rem;
+  right: 20px;
 }
 
 @media (max-width: 680px) {
