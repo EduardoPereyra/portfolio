@@ -3,7 +3,8 @@
 }
 
 .frame-shadow-container {
-  animation: swing 2s infinite alternate ease-in-out;
+  /* animation: swing 2s infinite alternate ease-in-out; */
+  transition: ease-out 1s;
 }
 
 @keyframes swing {

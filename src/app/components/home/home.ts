@@ -15,6 +15,7 @@ export class Home implements OnInit {
 
   images = signal<string[]>([]);
   selectedCertificate = signal<string | null>(null);
+  lampsOn = signal(false);
 
   ngOnInit() {
     this.importAllImages();

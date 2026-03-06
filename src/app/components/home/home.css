@@ -116,6 +116,47 @@
   right: 20px;
 }
 
+.certificates-container > div {
+  scroll-snap-type: x mandatory;
+  anchor-name: --my-carousel;
+}
+
+.certificates-container > div::scroll-button(*) {
+  border: 0;
+  font-size: 2rem;
+  background: none;
+  color: var(--color-emerald-700);
+  opacity: 0.7;
+  cursor: pointer;
+  position: absolute;
+  position-anchor: --my-carousel;
+  align-self: anchor-center;
+  background-color: var(--color-emerald-100);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.certificates-container > div::scroll-button(*):disabled {
+  color: var(--color-slate-400) !important;
+  cursor: unset;
+}
+
+.certificates-container > div::scroll-button(*):hover,
+.certificates-container > div::scroll-button(*):focus {
+  opacity: 1;
+}
+
+.certificates-container > div::scroll-button(left) {
+  content: '❮';
+  right: calc(anchor(left));
+}
+
+.certificates-container > div::scroll-button(right) {
+  content: '❯';
+  left: calc(anchor(right));
+}
+
 @media (max-width: 680px) {
   .card {
     padding: 0;
@@ -130,5 +171,9 @@
   }
   .word {
     padding-left: 0;
+  }
+
+  .certificates-container > div::scroll-button(*) {
+    display: none;
   }
 }
