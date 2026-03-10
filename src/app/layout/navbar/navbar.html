@@ -33,11 +33,13 @@
       </form>
     </li>
     <li class="w-18 h-auto relative">
-      <span
-        class="absolute -top-2 left-5 bg-red-500 text-white text-xs rounded-full px-1"
-        aria-label="cart items count"
-        >{{ cartAmounts() }}</span
-      >
+      @if (cartAmounts() > 0) {
+        <span
+          class="absolute -top-2 left-5 bg-red-500 text-white text-xs rounded-full px-1"
+          aria-label="cart items count"
+          >{{ cartAmounts() }}</span
+        >
+      }
       <a href="cart" class="text-gray-50 hover:text-emerald-900">
         <fa-icon
           [icon]="faCartArrowDown"
