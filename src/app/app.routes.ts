@@ -9,6 +9,10 @@ export const routes: Routes = [
     component: Home,
   },
   {
+    path: '**',
+    redirectTo: '',
+  },
+  {
     path: 'store',
     component: SkillsList,
   },
