@@ -40,6 +40,8 @@ export class Navbar implements OnInit {
   faGithub = faGithub;
   faAngleRight = faAngleRight;
 
+  cartAnimationClass = signal('');
+  previousCartValue = 0;
   cartAmounts = signal(0);
   searchModel = signal<SearchData>({ search: '' });
 
@@ -59,6 +61,11 @@ export class Navbar implements OnInit {
       } else {
         this.cartAmounts.set(total);
       }
+      if (total > this.previousCartValue) {
+        this.cartAnimationClass.set('cart-bounce');
+        setTimeout(() => this.cartAnimationClass.set(''), 1000);
+      }
+      this.previousCartValue = total;
     });
   }
 

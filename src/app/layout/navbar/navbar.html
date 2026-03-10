@@ -32,7 +32,7 @@
         </button>
       </form>
     </li>
-    <li class="w-18 h-auto relative">
+    <li class="w-18 h-auto relative" [class.cart-bounce]="cartAnimationClass() === 'cart-bounce'">
       @if (cartAmounts() > 0) {
         <span
           class="absolute -top-2 left-5 bg-red-500 text-white text-xs rounded-full px-1"
