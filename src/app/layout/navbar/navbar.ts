@@ -51,12 +51,10 @@ export class Navbar implements OnInit {
 
     this.store.select(selectCartTotalSkills).subscribe((total) => {
       if (total === 0) {
-        if (typeof localStorage !== 'undefined') {
-          const cart = localStorage.getItem('cart');
-          if (cart) {
-            const parsedCart = JSON.parse(cart);
-            this.cartAmounts.set(parsedCart.length);
-          }
+        const cart = localStorage.getItem('cart');
+        if (cart) {
+          const parsedCart = JSON.parse(cart);
+          this.cartAmounts.set(parsedCart.length);
         }
       } else {
         this.cartAmounts.set(total);

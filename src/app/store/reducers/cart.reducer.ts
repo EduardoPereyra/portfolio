@@ -28,12 +28,10 @@ export const cartReducer = createReducer(
     let skillsList = [...state.skills];
 
     if (skillsList.length === 0) {
-      if (typeof localStorage !== 'undefined') {
-        const cart = localStorage.getItem('cart');
-        if (cart) {
-          const parsedCart = JSON.parse(cart);
-          skillsList = parsedCart;
-        }
+      const cart = localStorage.getItem('cart');
+      if (cart) {
+        const parsedCart = JSON.parse(cart);
+        skillsList = parsedCart;
       }
     }
 

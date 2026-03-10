@@ -23,9 +23,7 @@ export class CartEffects {
         ),
         withLatestFrom(this.store.select(CartSelectors.selectCartSkills)),
         tap(([action, cartSkills]) => {
-          if (typeof localStorage !== 'undefined') {
-            localStorage.setItem('cart', JSON.stringify(cartSkills));
-          }
+          localStorage.setItem('cart', JSON.stringify(cartSkills));
         }),
       ),
     { dispatch: false },
@@ -35,9 +33,6 @@ export class CartEffects {
     this.actions$.pipe(
       ofType(CartActions.loadCart),
       switchMap(() => {
-        if (typeof localStorage === 'undefined') {
-          return of(CartActions.loadCartSuccess({ skills: [] }));
-        }
         const savedCart = localStorage.getItem('cart');
         const skills = savedCart ? JSON.parse(savedCart) : [];
 
