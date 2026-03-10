@@ -368,6 +368,26 @@
       "level": 3,
       "tag": "",
       "categories": ["Collaboration"]
+    },
+    {
+      "id": "40",
+      "name": "Magento",
+      "img": "assets/skills/magento.png",
+      "description": "",
+      "experience": "INTERMEDIATE",
+      "level": 3,
+      "tag": "",
+      "categories": ["Frontend", "Backend", "E-commerce"]
+    },
+    {
+      "id": "41",
+      "name": "Angular.js",
+      "img": "assets/skills/angularjs.png",
+      "description": "",
+      "experience": "INTERMEDIATE",
+      "level": 3,
+      "tag": "",
+      "categories": ["Frontend"]
     }
   ]
 }
