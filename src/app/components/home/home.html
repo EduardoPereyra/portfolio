@@ -2,38 +2,38 @@
   <img
     src="/assets/images/hero.png"
     alt="Hero Image"
-    class="w-64 h-64 object-cover rounded-full my-8 border-4 border-emerald-500"
+    class="hero-card w-64 h-64 object-cover rounded-full my-8 border-4 border-emerald-500 hover:brightness-110 hover:drop-shadow-xl hover:drop-shadow-emerald-300 hover:scale-105 transition-transform duration-300"
   />
   <div class="card">
     <div class="loader">
       <p>Hi! I am</p>
       <div class="words">
         <span
-          class="word bg-linear-to-r from-emerald-500 to-emerald-800 bg-clip-text text-transparent"
-          >Eduardo Jose Pereyra Yraola</span
+          class="word bg-linear-to-r from-emerald-400 to-emerald-800 bg-clip-text text-transparent"
+          >a Full Stack Developer</span
         >
         <span
-          class="word bg-linear-to-r from-emerald-500 to-emerald-800 bg-clip-text text-transparent"
-          >a Fullstack Developer</span
-        >
+          class="word bg-linear-to-r from-emerald-400 to-emerald-800 bg-clip-text text-transparent"
+          >Eduardo Jose Pereyra Yraola
+        </span>
         <span
-          class="word bg-linear-to-r from-emerald-500 to-emerald-800 bg-clip-text text-transparent"
+          class="word bg-linear-to-r from-emerald-400 to-emerald-800 bg-clip-text text-transparent"
           >a Frontend Developer</span
         >
         <span
-          class="word bg-linear-to-r from-emerald-500 to-emerald-800 bg-clip-text text-transparent"
+          class="word bg-linear-to-r from-emerald-400 to-emerald-800 bg-clip-text text-transparent"
           >a Backend Developer</span
         >
         <span
-          class="word bg-linear-to-r from-emerald-500 to-emerald-800 bg-clip-text text-transparent"
-          >Eduardo Jose Pereyra Yraola</span
+          class="word bg-linear-to-r from-emerald-400 to-emerald-800 bg-clip-text text-transparent"
+          >a Full Stack Developer</span
         >
       </div>
     </div>
   </div>
 
-  <section class="flex flex-col items-center justify-center mt-20 mx-10">
-    <p class="text-emerald-700 text-2xl text-justify">
+  <section class="flex flex-col items-center mt-20 mx-10">
+    <p class="text-emerald-700 text-2xl">
       React? Angular? Node? You pick the ingredients, I'll write the code. Browse the shelves, add
       your preferred technologies to the cart, and check out with your contact info. Your
       custom-built project is just a few clicks away.
@@ -49,10 +49,14 @@
   </section>
 </section>
 
-<section class="info-container flex flex-col gap-14 my-40 mx-10">
-  <h2 class="font-bold text-5xl mb-6 text-emerald-700 text-center">About me</h2>
+<section class="info-container flex flex-col gap-14 my-40 mx-10" id="about-me">
+  <h2
+    class="font-bold text-5xl mb-6 bg-linear-to-r from-emerald-400 to-emerald-800 bg-clip-text text-transparent text-center"
+  >
+    About me
+  </h2>
   <p class="bg-slate-100 text-emerald-700 py-4 px-6 rounded-lg text-xl">
-    I am a passionate and dedicated fullstack developer with a strong background in both frontend
+    I am a passionate and dedicated Full Stack developer with a strong background in both frontend
     and backend development.
   </p>
   <p class="bg-slate-100 text-emerald-700 py-4 px-6 rounded-lg text-xl">
@@ -66,17 +70,25 @@
   </p>
 </section>
 
-<section class="flex flex-col items-center justify-center mx-10 mt-60 text-justify">
-  <h2 class="font-bold text-5xl mb-6 text-emerald-700">Experience</h2>
+<section class="flex flex-col items-center mx-10 mt-60" id="experience">
+  <h2
+    class="font-bold text-5xl mb-6 bg-linear-to-r from-emerald-400 to-emerald-800 bg-clip-text text-transparent"
+  >
+    Experience
+  </h2>
 
   <article class="mb-10 w-full border border-emerald-400 p-6 rounded-lg">
-    <h3 class="text-2xl font-semibold text-emerald-600 flex flex-col md:block text-left">
-      Fullstack Developer | <span class="text-emerald-500">Stefanini EMEA</span>
+    <h3 class="text-2xl font-semibold text-emerald-900 flex flex-col md:block text-left">
+      Full Stack Developer | <span class="text-emerald-500">Stefanini EMEA</span>
     </h3>
     <h4 class="text-xl font-medium text-emerald-500">07/2024 - 02/2026</h4>
-    <h5 class="text-emerald-500 text-lg mt-6">Technical Stack & Development</h5>
+    <h4 class="text-xl font-semibold text-emerald-900 mt-8">Stack</h4>
     <ul>
-      <li class="text-emerald-700 text-lg mt-2 font-semibold">Angular, Java (8/17), Spring Boot</li>
+      <li class="text-emerald-500 text-lg">Angular.js - Angular (21), Java (8/17), Spring Boot</li>
+    </ul>
+    <h4 class="text-xl font-semibold text-emerald-900 mt-8">Overview</h4>
+    <h5 class="text-emerald-500 text-lg">Technical Stack & Development</h5>
+    <ul>
       <li class="text-emerald-700 text-lg mt-2">
         Developed enterprise applications using Spring Boot for backend services and Angular
         (latest) for dynamic frontend interfaces, with proficiency in Java, JavaScript, HTML, and
@@ -117,13 +129,17 @@
   </article>
 
   <article class="mb-10 w-full border border-emerald-400 p-6 rounded-lg">
-    <h3 class="text-2xl font-semibold text-emerald-600 flex flex-col md:block text-left">
+    <h3 class="text-2xl font-semibold text-emerald-900 flex flex-col md:block text-left">
       Freelance Frontend Developer | <span class="text-emerald-500">++HelloHello</span>
     </h3>
     <h4 class="text-xl font-medium text-emerald-500">07/2024 - 09/2024</h4>
+    <h4 class="text-xl font-semibold text-emerald-900 mt-8">Stack</h4>
     <ul>
-      <li class="text-emerald-700 text-lg mt-2 font-semibold">Next.js</li>
-      <li class="text-emerald-700 text-lg mt-2">
+      <li class="text-emerald-500 text-lg">Next.js</li>
+    </ul>
+    <h4 class="text-xl font-semibold text-emerald-900 mt-8">Overview</h4>
+    <ul>
+      <li class="text-emerald-700 text-lg">
         Architected a Next.js accountant application from a monolith project. Connected to Restful
         APIs in Ruby on Rails.
       </li>
@@ -148,14 +164,18 @@
   </article>
 
   <article class="mb-10 w-full border border-emerald-400 p-6 rounded-lg">
-    <h3 class="text-2xl font-semibold text-emerald-600 flex flex-col md:block text-left">
+    <h3 class="text-2xl font-semibold text-emerald-900 flex flex-col md:block text-left">
       Frontend Developer Leading Telecommunications USA Company |
       <span class="text-emerald-500">Temperies</span>
     </h3>
     <h4 class="text-xl font-medium text-emerald-500">09/2023 - 07/2024</h4>
+    <h4 class="text-xl font-semibold text-emerald-900 mt-8">Stack</h4>
     <ul>
-      <li class="text-emerald-700 text-lg mt-2 font-semibold">Next.js, Angular</li>
-      <li class="text-emerald-700 text-lg mt-2">
+      <li class="text-emerald-500 text-lg">Next.js, Angular</li>
+    </ul>
+    <h4 class="text-xl font-semibold text-emerald-900 mt-8">Overview</h4>
+    <ul>
+      <li class="text-emerald-700 text-lg">
         Developed high-performance Next.js and Angular applications, ensuring robust API integration
         and server-side logic.
       </li>
@@ -175,13 +195,17 @@
   </article>
 
   <article class="mb-10 w-full border border-emerald-400 p-6 rounded-lg">
-    <h3 class="text-2xl font-semibold text-emerald-600 flex flex-col md:block text-left">
+    <h3 class="text-2xl font-semibold text-emerald-900 flex flex-col md:block text-left">
       Frontend Developer | <span class="text-emerald-500">Metalabs (Closed Startup)</span>
     </h3>
     <h4 class="text-xl font-medium text-emerald-500">05/2023 - 08/2023</h4>
+    <h4 class="text-xl font-semibold text-emerald-900 mt-8">Stack</h4>
     <ul>
-      <li class="text-emerald-700 text-lg mt-2 font-semibold">Next.js, Angular</li>
-      <li class="text-emerald-700 text-lg mt-2">
+      <li class="text-emerald-500 text-lg">Next.js, Angular</li>
+    </ul>
+    <h4 class="text-xl font-semibold text-emerald-900 mt-8">Overview</h4>
+    <ul>
+      <li class="text-emerald-700 text-lg">
         Developed Angular and Next.js applications, focusing on performance and scalability.
       </li>
       <li class="text-emerald-700 text-lg mt-2">
@@ -210,13 +234,17 @@
   </article>
 
   <article class="mb-10 w-full border border-emerald-400 p-6 rounded-lg">
-    <h3 class="text-2xl font-semibold text-emerald-600 flex flex-col md:block text-left">
+    <h3 class="text-2xl font-semibold text-emerald-900 flex flex-col md:block text-left">
       Frontend Developer | <span class="text-emerald-500">Temperies</span>
     </h3>
     <h4 class="text-xl font-medium text-emerald-500">03/2022 - 05/2023</h4>
+    <h4 class="text-xl font-semibold text-emerald-900 mt-8">Stack</h4>
     <ul>
-      <li class="text-emerald-700 text-lg mt-2 font-semibold">React, Angular, Ionic</li>
-      <li class="text-emerald-700 text-lg mt-2">
+      <li class="text-emerald-500 text-lg">React, Angular, Ionic</li>
+    </ul>
+    <h4 class="text-xl font-semibold text-emerald-900 mt-8">Overview</h4>
+    <ul>
+      <li class="text-emerald-700 text-lg">
         Engineered solutions using React/Angular to build secure, scalable web applications and
         Ionic mobile apps. Connected to RESTful APIs in Spring Boot.
       </li>
@@ -240,13 +268,17 @@
   </article>
 
   <article class="mb-10 w-full border border-emerald-400 p-6 rounded-lg">
-    <h3 class="text-2xl font-semibold text-emerald-600 flex flex-col md:block text-left">
-      Fullstack Developer Banking | <span class="text-emerald-500">Besysoft</span>
+    <h3 class="text-2xl font-semibold text-emerald-900 flex flex-col md:block text-left">
+      Full Stack Developer Banking | <span class="text-emerald-500">Besysoft</span>
     </h3>
     <h4 class="text-xl font-medium text-emerald-500">04/2021 - 03/2022</h4>
+    <h4 class="text-xl font-semibold text-emerald-900 mt-8">Stack</h4>
     <ul>
-      <li class="text-emerald-700 text-lg mt-2 font-semibold">React, Angular, Spring</li>
-      <li class="text-emerald-700 text-lg mt-2">
+      <li class="text-emerald-500 text-lg">React, Angular, Spring</li>
+    </ul>
+    <h4 class="text-xl font-semibold text-emerald-900 mt-8">Overview</h4>
+    <ul>
+      <li class="text-emerald-700 text-lg">
         Developed React/Angular internal banking web applications.
       </li>
       <li class="text-emerald-700 text-lg mt-2">
@@ -273,13 +305,17 @@
   </article>
 
   <article class="mb-10 w-full border border-emerald-400 p-6 rounded-lg">
-    <h3 class="text-2xl font-semibold text-emerald-600 flex flex-col md:block text-left">
-      Fullstack Developer | <span class="text-emerald-500">Andromeda Latam</span>
+    <h3 class="text-2xl font-semibold text-emerald-900 flex flex-col md:block text-left">
+      Full Stack Developer | <span class="text-emerald-500">Andromeda Latam</span>
     </h3>
     <h4 class="text-xl font-medium text-emerald-500">12/2019 - 04/2021</h4>
+    <h4 class="text-xl font-semibold text-emerald-900 mt-8">Stack</h4>
     <ul>
-      <li class="text-emerald-700 text-lg mt-2 font-semibold">Angular, Java, Ionic, Magento</li>
-      <li class="text-emerald-700 text-lg mt-2">
+      <li class="text-emerald-500 text-lg">Angular, Java, Ionic, Magento</li>
+    </ul>
+    <h4 class="text-xl font-semibold text-emerald-900 mt-8">Overview</h4>
+    <ul>
+      <li class="text-emerald-700 text-lg">
         Developed the frontend interfaces for web, mobile, and ATM applications, powered by
         Java-based backends and microservices, to create cohesive cross-platform solutions.
       </li>
@@ -303,8 +339,15 @@
   </article>
 </section>
 
-<section class="certificates-container flex flex-col items-center justify-center mx-10 mt-60">
-  <h2 class="font-bold text-5xl mb-6 text-emerald-700">Certificates</h2>
+<section
+  class="certificates-container flex flex-col items-center justify-center mx-10 mt-60"
+  id="certificates"
+>
+  <h2
+    class="font-bold text-5xl mb-6 bg-linear-to-r from-emerald-400 to-emerald-800 bg-clip-text text-transparent"
+  >
+    Certificates
+  </h2>
   <div
     class="mx-40 mt-10 overflow-x-auto flex gap-10 py-4 px-2 whitespace-nowrap md:max-w-130 max-w-95"
   >
