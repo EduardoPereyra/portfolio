@@ -2,6 +2,7 @@
   class="border rounded md:w-60 w-40 shadow relative border-gray-100 text-emerald-700 cursor-pointer hover:shadow-lg transition-shadow duration-300"
   (mouseover)="showCart = true"
   (mouseleave)="showCart = false"
+  (click)="onClick()"
 >
   @if (skill.tag) {
     <div

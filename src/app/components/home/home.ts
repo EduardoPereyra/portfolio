@@ -2,7 +2,7 @@ declare var require: any;
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { Frame } from '../frame/frame';
 import { HttpClient } from '@angular/common/http';
-import { Modal } from '../modal/modal';
+import { Modal } from '../modals/modal/modal';
 
 @Component({
   selector: 'app-home',

@@ -4,10 +4,11 @@ import { Skills } from '../../services/skills';
 import { SkillDTO } from '../../models/skill';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
+import { ModalSkillItem } from '../modals/modal-skill-item/modal-skill-item';
 
 @Component({
   selector: 'app-skills-list',
-  imports: [SkillItem, CommonModule],
+  imports: [SkillItem, CommonModule, ModalSkillItem],
   templateUrl: './skills-list.html',
   styleUrl: './skills-list.css',
 })
@@ -21,6 +22,8 @@ export class SkillsList implements OnInit {
   categories = signal<string[]>([]);
   filter = signal<string>('');
   searchValue = signal<string>('');
+
+  selectedItem = signal<SkillDTO | null>(null);
 
   ngOnInit(): void {
     this.route.queryParamMap.subscribe((params) => {

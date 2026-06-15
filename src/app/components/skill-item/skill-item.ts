@@ -1,4 +1,4 @@
-import { Component, inject, Input } from '@angular/core';
+import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
 import { SkillDTO } from '../../models/skill';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faStar, faCartArrowDown, faCheck } from '@fortawesome/free-solid-svg-icons';
@@ -16,6 +16,7 @@ export class SkillItem {
   store = inject(Store);
 
   @Input() skill: SkillDTO = new SkillDTO();
+  @Output() selectedItem = new EventEmitter<SkillDTO>();
   skillsService = inject(Skills);
 
   faStar = faStar;
@@ -30,5 +31,9 @@ export class SkillItem {
     // this.skillsService.addSkillToCart(skill);
     this.store.dispatch(CartActions.addToCartSuccess({ skill }));
     this.added = true;
+  }
+
+  onClick() {
+    this.selectedItem.emit(this.skill);
   }
 }

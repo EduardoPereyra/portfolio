@@ -28,7 +28,14 @@
   </aside>
   <div class="flex flex-wrap gap-x-6 gap-y-12 items-start justify-center md:justify-start h-full">
     @for (item of filteredItems(); track item.id) {
-      <app-skill-item [skill]="item"></app-skill-item>
+      <app-skill-item [skill]="item" (selectedItem)="selectedItem.set($event)"></app-skill-item>
     }
   </div>
 </div>
+
+@if (selectedItem()) {
+  <app-modal-skill-item
+    [item]="selectedItem()!"
+    (onClose)="selectedItem.set(null)"
+  ></app-modal-skill-item>
+}
