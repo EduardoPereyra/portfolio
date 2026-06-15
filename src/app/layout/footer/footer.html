@@ -1,4 +1,63 @@
 <footer class="w-dvw p-4 shadow-xs bg-emerald-500 static mt-40">
+  <ul
+    class="p-2 text-sm text-white font-medium flex items-center justify-center w-full gap-10"
+    aria-labelledby="doubleDropdownButton"
+  >
+    <li class="flex items-center">
+      <fa-icon
+        [icon]="faPhone"
+        class="text-sm w-4 h-4 me-1"
+        aria-label="phone number"
+        aria-hidden="false"
+      ></fa-icon>
+      <a
+        href="tel:+34 637 46 70 24"
+        class="inline-flex items-center w-full hover:bg-emerald-600 rounded px-1"
+        >Phone number</a
+      >
+    </li>
+    <li class="flex items-center">
+      <fa-icon
+        [icon]="faEnvelope"
+        class="text-sm w-4 h-4 me-1"
+        aria-label="email"
+        aria-hidden="false"
+      ></fa-icon>
+      <a
+        href="mailto:eduardo.pereyrayraola@gmail.com"
+        class="inline-flex items-center w-full hover:bg-emerald-600 rounded px-1"
+        >Email</a
+      >
+    </li>
+    <li class="flex items-center">
+      <fa-icon
+        [icon]="faLinkedin"
+        class="text-sm w-4 h-4 me-1"
+        aria-label="LinkedIn"
+        aria-hidden="false"
+      ></fa-icon>
+      <a
+        href="https://www.linkedin.com/in/eduardo-jose-pereyra-yraola/"
+        target="_blank"
+        class="inline-flex items-center w-full hover:bg-emerald-600 rounded px-1"
+        >LinkedIn</a
+      >
+    </li>
+    <li class="flex items-center">
+      <fa-icon
+        [icon]="faGithub"
+        class="text-sm w-4 h-4 me-1"
+        aria-label="GitHub"
+        aria-hidden="false"
+      ></fa-icon>
+      <a
+        href="https://github.com/EduardoPereyra"
+        target="_blank"
+        class="inline-flex items-center w-full hover:bg-emerald-600 rounded px-1"
+        >Github</a
+      >
+    </li>
+  </ul>
   <p class="text-center text-sm text-white py-8">
     &copy; {{ currentYear }} Eduardo Pereyra Yraola. All rights reserved.
   </p>

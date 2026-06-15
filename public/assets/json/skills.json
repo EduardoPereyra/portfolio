@@ -380,7 +380,7 @@
     },
     {
       "id": "41",
-      "name": "Angular.js",
+      "name": "AngularJS",
       "img": "assets/skills/angularjs.png",
       "description": "Expert in building single-page applications with AngularJS (Angular 1.x), including directives, services, two-way data binding, and dependency injection.",
       "experience": "EXPERT",
