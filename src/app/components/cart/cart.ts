@@ -10,6 +10,7 @@ import { CartItem } from '../cart-item/cart-item';
 import { ModalEmailCheckout } from '../modals/modal-email-checkout/modal-email-checkout';
 import { Snackbar } from '../../util/snackbar/snackbar';
 import { SnackbarInfo } from '../../models/snackbar';
+import { Email } from '../../models/email';
 
 interface ContactData {
   fullName: string;
@@ -34,7 +35,7 @@ export class Cart implements OnInit {
   error$: Observable<string | null> = this.store.select(CartSelectors.selectCartError);
   totalItems$: Observable<number> = this.store.select(CartSelectors.selectCartTotalSkills);
 
-  checkoutURL = signal<string | null>(null);
+  checkoutEmail = signal<Email | null>(null);
 
   showMessage = signal<SnackbarInfo | null>(null);
 
@@ -109,15 +110,14 @@ ${'-'.repeat(40)}
 This request was sent from my interactive portfolio shop.
         `.trim();
 
-    const subject = encodeURIComponent(`Project Request from ${name}`);
-    const body = encodeURIComponent(emailBody);
-    const mailToLink = `mailto:eduardo.pereyrayraola@gmail.com?subject=${subject}&body=${body}`;
-
-    this.checkoutURL.set(mailToLink);
+    this.checkoutEmail.set({
+      subject: `Project Request from ${name}`,
+      body: emailBody,
+    });
   }
 
   onCloseModal(snackbarInfo: SnackbarInfo) {
-    this.checkoutURL.set(null);
+    this.checkoutEmail.set(null);
     this.showMessage.set({
       message: snackbarInfo.message,
       type: snackbarInfo.type,

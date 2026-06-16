@@ -100,9 +100,9 @@
   </form>
 </div>
 
-@if (checkoutURL()) {
+@if (checkoutEmail()) {
   <app-modal-email-checkout
-    [url]="checkoutURL()!"
+    [checkoutEmail]="checkoutEmail()!"
     (onClose)="onCloseModal($event)"
   ></app-modal-email-checkout>
 }
