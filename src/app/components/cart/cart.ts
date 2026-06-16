@@ -7,6 +7,9 @@ import * as CartSelectors from '../../store/selectors/cart.selectors';
 import * as CartActions from '../../store/actions/cart.actions';
 import { AsyncPipe } from '@angular/common';
 import { CartItem } from '../cart-item/cart-item';
+import { ModalEmailCheckout } from '../modals/modal-email-checkout/modal-email-checkout';
+import { Snackbar } from '../../util/snackbar/snackbar';
+import { SnackbarInfo } from '../../models/snackbar';
 
 interface ContactData {
   fullName: string;
@@ -18,17 +21,22 @@ interface ContactData {
 
 @Component({
   selector: 'app-cart',
-  imports: [AsyncPipe, CartItem, FormField],
+  imports: [AsyncPipe, CartItem, FormField, ModalEmailCheckout, Snackbar],
   templateUrl: './cart.html',
   styleUrl: './cart.css',
 })
 export class Cart implements OnInit {
   store = inject(Store);
+  signal = signal;
 
   items$: Observable<SkillDTO[]> = this.store.select(CartSelectors.selectCartSkills);
   loading$: Observable<boolean> = this.store.select(CartSelectors.selectCartLoading);
   error$: Observable<string | null> = this.store.select(CartSelectors.selectCartError);
   totalItems$: Observable<number> = this.store.select(CartSelectors.selectCartTotalSkills);
+
+  checkoutURL = signal<string | null>(null);
+
+  showMessage = signal<SnackbarInfo | null>(null);
 
   contactModel = signal<ContactData>({
     fullName: '',
@@ -103,17 +111,26 @@ This request was sent from my interactive portfolio shop.
 
     const subject = encodeURIComponent(`Project Request from ${name}`);
     const body = encodeURIComponent(emailBody);
-    const mailtoLink = `mailto:eduardo.pereyrayraola@gmail.com?subject=${subject}&body=${body}`;
+    const mailToLink = `mailto:eduardo.pereyrayraola@gmail.com?subject=${subject}&body=${body}`;
 
-    location.href = mailtoLink;
+    this.checkoutURL.set(mailToLink);
+  }
 
-    this.clearCart();
-    this.contactModel.set({
-      fullName: '',
-      email: '',
-      phone: '',
-      company: '',
-      notes: '',
-    });
+  onCloseModal(snackbarInfo: SnackbarInfo) {
+    this.checkoutURL.set(null);
+    this.showMessage.set({
+      message: snackbarInfo.message,
+      type: snackbarInfo.type,
+    } as SnackbarInfo);
+    if (snackbarInfo.message) {
+      this.clearCart();
+      this.contactModel.set({
+        fullName: '',
+        email: '',
+        phone: '',
+        company: '',
+        notes: '',
+      });
+    }
   }
 }

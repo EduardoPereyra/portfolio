@@ -99,3 +99,16 @@
     </button>
   </form>
 </div>
+
+@if (checkoutURL()) {
+  <app-modal-email-checkout
+    [url]="checkoutURL()!"
+    (onClose)="onCloseModal($event)"
+  ></app-modal-email-checkout>
+}
+
+<app-snackbar
+  [type]="showMessage()?.type"
+  [message]="showMessage()?.message"
+  (dismissed)="showMessage.set(null)"
+></app-snackbar>
