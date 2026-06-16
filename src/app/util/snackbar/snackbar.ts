@@ -16,11 +16,11 @@ export class Snackbar {
   constructor() {
     effect(() => {
       console.log(this.message());
-      // if (this.message()) {
-      //   setTimeout(() => {
-      //     this.dismissed.emit();
-      //   }, 5000);
-      // }
+      if (this.message()) {
+        setTimeout(() => {
+          this.dismissed.emit();
+        }, 5000);
+      }
     });
   }
 }
