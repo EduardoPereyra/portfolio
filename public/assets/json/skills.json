@@ -141,7 +141,7 @@
     {
       "id": "16",
       "name": "Node.js",
-      "img": "assets/skills/node-js.jpeg",
+      "img": "assets/skills/node-js.png",
       "description": "Advanced experience building scalable backend services and APIs using Node.js, Express.js, and various npm packages for authentication, file handling, and database integration.",
       "experience": "ADVANCED",
       "level": 4,

@@ -1,3 +1,113 @@
-.frame-shadow {
-  box-shadow: -3px -3px 12px #999;
+.certificate-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: grid;
+  place-items: center;
+  padding: clamp(1rem, 3vw, 2rem);
+  background: rgba(16, 35, 29, 0.72);
+  backdrop-filter: blur(18px);
+  cursor: pointer;
+}
+
+.certificate-modal {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  width: min(1120px, 100%);
+  max-height: min(88dvh, 880px);
+  border: 1px solid rgba(255, 255, 255, 0.56);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 32px 100px rgba(0, 0, 0, 0.28);
+  overflow: hidden;
+  cursor: default;
+}
+
+.certificate-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem clamp(1rem, 2vw, 1.4rem);
+  border-bottom: 1px solid rgba(16, 35, 29, 0.1);
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.certificate-modal-header span {
+  display: block;
+  color: var(--portfolio-accent-dark);
+  font-size: 0.72rem;
+  font-weight: 850;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.certificate-modal-header h2 {
+  margin-top: 0.25rem;
+  color: var(--portfolio-ink);
+  font-size: clamp(1rem, 2vw, 1.35rem);
+  font-weight: 850;
+  line-height: 1.2;
+}
+
+.close-button {
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  width: 2.5rem;
+  aspect-ratio: 1;
+  border: 1px solid rgba(16, 35, 29, 0.12);
+  border-radius: 999px;
+  background: white;
+  color: var(--portfolio-ink);
+  cursor: pointer;
+  font-size: 1.65rem;
+  line-height: 1;
+}
+
+.close-button:hover,
+.close-button:focus-visible {
+  border-color: rgba(4, 120, 87, 0.32);
+  color: var(--portfolio-accent-dark);
+  transform: translateY(-1px);
+  outline: none;
+}
+
+.certificate-modal-body {
+  display: grid;
+  place-items: center;
+  min-height: 0;
+  padding: clamp(0.75rem, 2vw, 1.25rem);
+  background:
+    linear-gradient(135deg, rgba(236, 253, 245, 0.42), rgba(255, 255, 255, 0.9)),
+    white;
+  overflow: auto;
+}
+
+.certificate-modal-body img {
+  display: block;
+  width: min(100%, 980px);
+  max-height: 72dvh;
+  border: 1px solid rgba(16, 35, 29, 0.1);
+  border-radius: 6px;
+  object-fit: contain;
+  box-shadow: 0 18px 60px rgba(16, 35, 29, 0.12);
+}
+
+@media (max-width: 640px) {
+  .certificate-modal-backdrop {
+    padding: 0.75rem;
+  }
+
+  .certificate-modal {
+    max-height: 92dvh;
+  }
+
+  .certificate-modal-header {
+    align-items: start;
+  }
+
+  .certificate-modal-body img {
+    max-height: 68dvh;
+  }
 }

@@ -1,18 +1,22 @@
-<div
-  class="bg-zinc-900/90 z-20 fixed top-0 left-0 w-full h-full flex items-center justify-center cursor-pointer"
-  (click)="onClick()"
->
-  <div
-    class="frame-shadow relative p-0 md:border-40 border-s-taupe-600 border-bs-taupe-400 border-e-taupe-500 border-be-taupe-700 md:m-40 md:w-3/5 h-auto w-full m-2 border-10"
-  >
-    <div class="frame-shadow p-0 m-0 border-12 border-white">
+<div class="certificate-modal-backdrop" (click)="onClick()">
+  <section class="certificate-modal" (click)="$event.stopPropagation()" aria-label="Certificate preview">
+    <header class="certificate-modal-header">
+      <div>
+        <span>Certificate preview</span>
+        <h2>{{ title }}</h2>
+      </div>
+      <button type="button" class="close-button" (click)="onClick()" aria-label="Close certificate">
+        ×
+      </button>
+    </header>
+
+    <div class="certificate-modal-body">
       <img
-        class="p-0 m-0 w-full h-auto border-t-2 border-l-2 border-b-2 border-r-2 border-t-gray-500 border-l-gray-500 border-b-gray-300 border-r-gray-300"
         [ngSrc]="`assets/certificates/${imageName}.jpg`"
-        alt="{{ imageName }}"
-        width="160"
-        height="120"
+        alt="{{ title }}"
+        width="1200"
+        height="850"
       />
     </div>
-  </div>
+  </section>
 </div>

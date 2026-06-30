@@ -1,37 +1,58 @@
-<section class="mb-10 pt-10 md:m-0 m-4 md:mt-20">
-  <h2 class="font-bold text-4xl mb-3 text-emerald-700">Store</h2>
-  <span class="text-emerald-700 text-lg mb-10">
-    Select the technologies you want me to work with and let's get in touch!
-  </span>
-</section>
-<div class="flex md:flex-row flex-col gap-10 md:m-0 m-4 pt-6">
-  <aside class="mb-10 w-60 pr-15">
-    <h3 class="font-bold text-2xl mb-3 text-emerald-700">Categories</h3>
-    <div
-      class="flex md:flex-wrap flex-no-wrap gap-3 md:flex-col flex-row overflow-x-auto md:w-full w-[calc(100vw-1rem)] md:pb-0 pb-4"
-    >
-      @for (category of categories(); track category) {
-        <button
-          class="px-2 py-2 rounded-full text-sm text-gray-700 transition-colors cursor-pointer md:w-full w-40 shrink-0"
-          [ngClass]="
-            filter() === category
-              ? 'bg-emerald-500 hover:bg-emerald-600'
-              : 'bg-gray-200 hover:bg-gray-300'
-          "
-          [class.text-white]="filter() === category"
-          (click)="setFilter(category)"
-        >
-          {{ category }}
-        </button>
-      }
+<section class="store-page">
+  <header class="store-hero">
+    <p class="store-eyebrow">Interactive stack builder</p>
+    <div>
+      <h2>Store</h2>
+      <p>
+        Select the technologies you want me to work with and build a project request around a stack
+        that fits your goals.
+      </p>
     </div>
-  </aside>
-  <div class="flex flex-wrap gap-x-6 gap-y-12 items-start justify-center md:justify-start h-full">
-    @for (item of filteredItems(); track item.id) {
-      <app-skill-item [skill]="item" (selectedItem)="selectedItem.set($event)"></app-skill-item>
-    }
+  </header>
+
+  <div class="store-layout">
+    <aside class="store-sidebar" aria-label="Skill categories">
+      <div class="sidebar-header">
+        <h3>Categories</h3>
+        <span>{{ categories().length }} groups</span>
+      </div>
+      <div class="category-list">
+        @for (category of categories(); track category) {
+          <button
+            class="category-pill"
+            [ngClass]="filter() === category ? 'is-active' : ''"
+            (click)="setFilter(category)"
+          >
+            {{ category }}
+          </button>
+        }
+      </div>
+    </aside>
+
+    <section class="store-results" aria-label="Available technologies">
+      <div class="results-toolbar">
+        <div>
+          <span>{{ filteredItems().length }}</span>
+          <p>technologies available</p>
+        </div>
+        @if (filter() || searchValue()) {
+          <button type="button" class="clear-filter" (click)="clearFilters()">Clear view</button>
+        }
+      </div>
+
+      <div class="skills-grid">
+        @for (item of filteredItems(); track item.id; let index = $index) {
+          <div class="skill-card-shell" [style.animation-delay.ms]="index * 45">
+            <app-skill-item
+              [skill]="item"
+              (selectedItem)="selectedItem.set($event)"
+            ></app-skill-item>
+          </div>
+        }
+      </div>
+    </section>
   </div>
-</div>
+</section>
 
 @if (selectedItem()) {
   <app-modal-skill-item

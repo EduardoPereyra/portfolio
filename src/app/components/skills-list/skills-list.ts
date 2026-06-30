@@ -36,11 +36,17 @@ export class SkillsList implements OnInit {
   setFilter(category: string) {
     if (this.filter() === category) {
       this.filter.set('');
-      this.filteredItems.set(this.items());
+      this.applyFilters();
     } else {
       this.filter.set(category);
-      this.filteredItems.set(this.items().filter((item) => item.categories.includes(category)));
+      this.applyFilters();
     }
+  }
+
+  clearFilters() {
+    this.filter.set('');
+    this.searchValue.set('');
+    this.applyFilters();
   }
 
   loadList() {
@@ -50,15 +56,20 @@ export class SkillsList implements OnInit {
         new Set(skills.flatMap((skill) => skill.categories)),
       ).sort();
       this.categories.set(uniqueCategories);
-      if (this.searchValue()) {
-        this.filteredItems.set(
-          skills.filter((skill) =>
-            skill.name.toLowerCase().includes(this.searchValue().toLowerCase()),
-          ),
-        );
-      } else {
-        this.filteredItems.set(skills);
-      }
+      this.applyFilters();
     });
+  }
+
+  private applyFilters() {
+    const search = this.searchValue().trim().toLowerCase();
+    const category = this.filter();
+
+    this.filteredItems.set(
+      this.items().filter((skill) => {
+        const matchesSearch = search ? skill.name.toLowerCase().includes(search) : true;
+        const matchesCategory = category ? skill.categories.includes(category) : true;
+        return matchesSearch && matchesCategory;
+      }),
+    );
   }
 }

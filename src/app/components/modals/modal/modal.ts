@@ -11,6 +11,14 @@ export class Modal {
   @Input() imageName: string = '';
   @Output() onClose = new EventEmitter<void>();
 
+  get title(): string {
+    return this.imageName
+      .replace('CertificadoDeFinalizacion_', '')
+      .replace(/([a-z])([A-Z])/g, '$1 $2')
+      .replace(/_/g, ' ')
+      .trim();
+  }
+
   onClick() {
     this.onClose.emit();
   }

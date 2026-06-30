@@ -25,7 +25,7 @@
         <dd>Angular generation used in this portfolio</dd>
       </div>
       <div>
-        <dt>360</dt>
+        <dt>36</dt>
         <dd>frontend, backend and delivery ownership</dd>
       </div>
     </dl>
@@ -33,12 +33,7 @@
 
   <div class="hero-portrait reveal-on-load">
     <div class="portrait-orbit" aria-hidden="true"></div>
-    <img
-      src="/assets/images/hero.png"
-      alt="Eduardo Jose Pereyra Yraola"
-      width="420"
-      height="420"
-    />
+    <img src="/assets/images/hero.png" alt="Eduardo Jose Pereyra Yraola" width="420" height="420" />
     <div class="portrait-card">
       <span>Available for senior product engineering</span>
       <strong>Angular | Java | Cloud | CI/CD</strong>
@@ -61,8 +56,8 @@
       consistency, accessibility, automation and clear ownership from idea to release.
     </p>
     <p>
-      My experience spans startups, telecom, banking and enterprise platforms, with a strong
-      balance between frontend craft and backend fundamentals.
+      My experience spans startups, telecom, banking and enterprise platforms, with a strong balance
+      between frontend craft and backend fundamentals.
     </p>
   </div>
 </section>
@@ -148,8 +143,8 @@
           <li>WebSockets</li>
         </ul>
         <p>
-          Developed geospatial workflows, real-time chat, secured REST and GraphQL integrations,
-          and server-driven personalization features.
+          Developed geospatial workflows, real-time chat, secured REST and GraphQL integrations, and
+          server-driven personalization features.
         </p>
       </div>
     </article>
@@ -217,19 +212,33 @@
 </section>
 
 <section class="certificates-section reveal-section" id="certificates">
-  <div class="section-heading centered">
-    <p class="eyebrow">Certificates</p>
-    <h2>Continuous learning, framed by practice.</h2>
+  <div class="certificates-header">
+    <div class="section-heading">
+      <p class="eyebrow">Certificates</p>
+      <h2>Continuous learning, framed by practice.</h2>
+    </div>
+    <div class="certificates-summary" aria-label="Learning highlights">
+      <div>
+        <strong>{{ images().length }}</strong>
+        <span>verified credentials</span>
+      </div>
+      <div>
+        <strong>Tech + Leadership</strong>
+        <span>balanced growth areas</span>
+      </div>
+    </div>
   </div>
 
   @defer (on viewport) {
-    <div class="certificates-rail" aria-label="Certificates carousel">
-      @for (image of images(); track image) {
-        <app-frame
-          [imageName]="image"
-          (selectedCertificate)="selectedCertificate.set($event)"
-        ></app-frame>
-      }
+    <div class="certificates-gallery">
+      <div class="certificates-rail" aria-label="Certificates carousel">
+        @for (image of images(); track image) {
+          <app-frame
+            [imageName]="image"
+            (selectedCertificate)="selectedCertificate.set($event)"
+          ></app-frame>
+        }
+      </div>
     </div>
   } @placeholder {
     <div class="certificates-placeholder">Loading certificates...</div>
