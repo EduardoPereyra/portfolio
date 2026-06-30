@@ -12,7 +12,7 @@
   padding: 0.85rem;
   border: 1px solid rgba(16, 35, 29, 0.12);
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.82);
+  background: var(--portfolio-card-surface);
   box-shadow: 0 18px 48px rgba(16, 35, 29, 0.1);
   color: inherit;
   cursor: pointer;
@@ -40,9 +40,7 @@
   aspect-ratio: 4 / 3;
   border: 1px solid rgba(16, 35, 29, 0.1);
   border-radius: 6px;
-  background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.94), rgba(236, 253, 245, 0.68)),
-    #ffffff;
+  background: var(--portfolio-media-surface);
   overflow: hidden;
 }
 

@@ -49,6 +49,22 @@
         ></fa-icon>
       </a>
     </li>
+    <li>
+      <button
+        class="theme-button"
+        type="button"
+        [attr.aria-label]="
+          themeService.theme() === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'
+        "
+        (click)="toggleTheme()"
+      >
+        <fa-icon
+          [icon]="themeService.theme() === 'dark' ? faSun : faMoon"
+          class="text-xl"
+          aria-hidden="true"
+        ></fa-icon>
+      </button>
+    </li>
     <li class="w-18 h-auto">
       <button
         id="dropdownDefaultButton"
@@ -67,14 +83,14 @@
 
       <div
         id="dropdown"
-        class="z-10 hidden bg-neutral-primary-medium border border-default-medium rounded-base shadow-lg w-44"
+        class="dropdown-menu z-10 hidden bg-neutral-primary-medium border border-default-medium rounded-base shadow-lg w-44"
       >
         <ul class="p-2 text-sm text-body font-medium" aria-labelledby="dropdownDefaultButton">
           <li>
             <a
               download
               href="/assets/files/Eduardo Jose Pereyra Yraola - Full Stack Developer - CV.pdf"
-              class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded"
+              class="dropdown-item inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded"
               >Download CV</a
             >
           </li>
@@ -84,7 +100,7 @@
               data-dropdown-toggle="doubleDropdown"
               data-dropdown-placement="right-start"
               type="button"
-              class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded"
+              class="dropdown-item inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded"
             >
               Contact
               <fa-icon
@@ -96,7 +112,7 @@
             </button>
             <div
               id="doubleDropdown"
-              class="z-10 hidden bg-neutral-primary-medium border border-default-medium rounded-base shadow-lg w-44"
+              class="dropdown-menu z-10 hidden bg-neutral-primary-medium border border-default-medium rounded-base shadow-lg w-44"
             >
               <ul class="p-2 text-sm text-body font-medium" aria-labelledby="doubleDropdownButton">
                 <li class="flex items-center">
@@ -108,7 +124,7 @@
                   ></fa-icon>
                   <a
                     href="tel:+34 637 46 70 24"
-                    class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded"
+                    class="dropdown-item inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded"
                     >Phone number</a
                   >
                 </li>
@@ -121,7 +137,7 @@
                   ></fa-icon>
                   <a
                     href="mailto:eduardo.pereyrayraola@gmail.com"
-                    class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded"
+                    class="dropdown-item inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded"
                     >Email</a
                   >
                 </li>
@@ -135,7 +151,7 @@
                   <a
                     href="https://www.linkedin.com/in/eduardo-jose-pereyra-yraola/"
                     target="_blank"
-                    class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded"
+                    class="dropdown-item inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded"
                     >LinkedIn</a
                   >
                 </li>
@@ -149,7 +165,7 @@
                   <a
                     href="https://github.com/EduardoPereyra"
                     target="_blank"
-                    class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded"
+                    class="dropdown-item inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded"
                     >Github</a
                   >
                 </li>

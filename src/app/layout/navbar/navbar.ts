@@ -8,12 +8,15 @@ import {
   faPhone,
   faEnvelope,
   faAngleRight,
+  faMoon,
+  faSun,
 } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { Store } from '@ngrx/store';
 import { selectCartTotalSkills } from '../../store/selectors/cart.selectors';
 import { form, FormField } from '@angular/forms/signals';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { ThemeService } from '../../services/theme';
 
 interface SearchData {
   search: string;
@@ -29,6 +32,7 @@ export class Navbar implements OnInit {
   store = inject(Store);
   private route = inject(ActivatedRoute);
   private router = inject(Router);
+  readonly themeService = inject(ThemeService);
 
   faCartArrowDown = faCartArrowDown;
   faMagnifyingGlass = faMagnifyingGlass;
@@ -39,6 +43,8 @@ export class Navbar implements OnInit {
   faEnvelope = faEnvelope;
   faGithub = faGithub;
   faAngleRight = faAngleRight;
+  faMoon = faMoon;
+  faSun = faSun;
 
   cartAnimationClass = signal('');
   previousCartValue = 0;
@@ -77,5 +83,9 @@ export class Navbar implements OnInit {
     } else {
       this.router.navigate(['/store']);
     }
+  }
+
+  toggleTheme() {
+    this.themeService.toggleTheme();
   }
 }

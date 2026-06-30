@@ -92,7 +92,7 @@
 .secondary-action {
   color: var(--portfolio-ink);
   border: 1px solid var(--portfolio-line);
-  background: rgba(255, 255, 255, 0.62);
+  background: var(--portfolio-card-surface-soft);
 }
 
 .primary-action:hover,
@@ -112,7 +112,7 @@
   padding: 1rem;
   border: 1px solid var(--portfolio-line);
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.58);
+  background: var(--portfolio-card-surface-soft);
   box-shadow: 0 12px 32px rgba(16, 35, 29, 0.08);
   backdrop-filter: blur(14px);
 }
@@ -176,7 +176,7 @@
   padding: 1rem;
   border: 1px solid rgba(255, 255, 255, 0.58);
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.78);
+  background: var(--portfolio-card-surface);
   backdrop-filter: blur(18px);
 }
 
@@ -223,7 +223,7 @@
 .experience-card {
   border: 1px solid var(--portfolio-line);
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.7);
+  background: var(--portfolio-card-surface-soft);
   box-shadow: 0 18px 60px rgba(16, 35, 29, 0.08);
   backdrop-filter: blur(16px);
 }
@@ -318,8 +318,8 @@
   border: 1px solid rgba(4, 120, 87, 0.18);
   border-radius: 999px;
   padding: 0.35rem 0.7rem;
-  color: #0f513f;
-  background: rgba(209, 250, 229, 0.72);
+  color: var(--portfolio-accent-dark);
+  background: var(--portfolio-card-surface-muted);
   font-size: 0.88rem;
   font-weight: 750;
 }
@@ -358,7 +358,7 @@
   padding: 1rem;
   border: 1px solid var(--portfolio-line);
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.68);
+  background: var(--portfolio-card-surface-soft);
   box-shadow: 0 18px 60px rgba(16, 35, 29, 0.08);
   backdrop-filter: blur(16px);
 }
@@ -386,9 +386,7 @@
   position: relative;
   border: 1px solid var(--portfolio-line);
   border-radius: 8px;
-  background:
-    linear-gradient(90deg, rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.42)),
-    rgba(255, 255, 255, 0.58);
+  background: var(--portfolio-gallery-surface);
   box-shadow: 0 24px 80px rgba(16, 35, 29, 0.1);
   overflow: hidden;
 }

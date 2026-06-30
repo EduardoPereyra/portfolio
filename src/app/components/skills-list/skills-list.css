@@ -45,7 +45,7 @@
 .store-results {
   border: 1px solid var(--portfolio-line);
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.72);
+  background: var(--portfolio-card-surface-soft);
   box-shadow: 0 24px 80px rgba(16, 35, 29, 0.09);
   backdrop-filter: blur(16px);
 }
@@ -88,7 +88,7 @@
   border: 1px solid rgba(16, 35, 29, 0.1);
   border-radius: 999px;
   padding: 0.55rem 0.85rem;
-  background: rgba(255, 255, 255, 0.72);
+  background: var(--portfolio-card-surface-soft);
   color: var(--portfolio-ink);
   cursor: pointer;
   font-size: 0.92rem;
@@ -133,7 +133,7 @@
   border: 1px solid rgba(4, 120, 87, 0.22);
   border-radius: 999px;
   padding: 0.55rem 0.85rem;
-  background: rgba(236, 253, 245, 0.72);
+  background: var(--portfolio-card-surface-muted);
   color: var(--portfolio-accent-dark);
   cursor: pointer;
   font-size: 0.88rem;
@@ -142,7 +142,7 @@
 
 .clear-filter:hover,
 .clear-filter:focus-visible {
-  background: rgba(209, 250, 229, 0.95);
+  background: var(--portfolio-card-surface-hover);
   transform: translateY(-1px);
   outline: none;
 }

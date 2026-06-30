@@ -3,12 +3,14 @@ import { TestBed } from '@angular/core/testing';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Navbar } from './navbar';
+import { ThemeService } from '../../services/theme';
 
 describe('Navbar', () => {
   let component: Navbar;
   let mockStore: any;
   let mockRouter: any;
   let mockActivatedRoute: any;
+  let mockThemeService: any;
 
   beforeEach(() => {
     mockStore = {
@@ -29,11 +31,17 @@ describe('Navbar', () => {
       },
     };
 
+    mockThemeService = {
+      theme: vi.fn().mockReturnValue('light'),
+      toggleTheme: vi.fn(),
+    };
+
     TestBed.configureTestingModule({
       providers: [
         { provide: Store, useValue: mockStore },
         { provide: Router, useValue: mockRouter },
         { provide: ActivatedRoute, useValue: mockActivatedRoute },
+        { provide: ThemeService, useValue: mockThemeService },
       ],
     });
 
@@ -95,10 +103,16 @@ describe('Navbar', () => {
     expect(mockRouter.navigate).toHaveBeenCalledWith(['/store']);
   });
 
-  it('should not navigate on whitespace-only search', () => {
+  it('should navigate to store without query params on whitespace-only search', () => {
     component.searchForm.search().value.set('   ');
     const event = new Event('submit');
     component.handleSearch(event);
     expect(mockRouter.navigate).toHaveBeenCalledWith(['/store']);
+  });
+
+  it('should toggle theme through the theme service', () => {
+    component.toggleTheme();
+
+    expect(mockThemeService.toggleTheme).toHaveBeenCalled();
   });
 });
