@@ -1,6 +1,6 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { email, form, required, pattern, max, FormField } from '@angular/forms/signals';
-import { Observable } from 'rxjs/internal/Observable';
+import { Observable, take } from 'rxjs';
 import { SkillDTO } from '../../models/skill';
 import { Store } from '@ngrx/store';
 import * as CartSelectors from '../../store/selectors/cart.selectors';
@@ -71,34 +71,25 @@ export class Cart implements OnInit {
       this.contactForm().markAsTouched();
       return;
     }
-    // Get form data
-    let cart: SkillDTO[] = [];
     const name = this.contactForm.fullName().value();
-    const email = this.contactForm.email().value();
+    const contactEmail = this.contactForm.email().value();
     const phone = this.contactForm.phone().value();
     const company = this.contactForm.company().value();
     const message = this.contactForm.notes().value();
 
-    // Subscribe to get the cart data
-    this.items$.subscribe((items) => {
-      cart = items;
-    });
-
-    // Format the cart items for email
-    const techList = cart.map((tech) => `• ${tech.name}`).join('\n');
-
-    // Build the email body
-    const emailBody = `
+    this.items$.pipe(take(1)).subscribe((cart) => {
+      const techList = cart.map((tech) => `• ${tech.name}`).join('\n');
+      const emailBody = `
 New Project Request from ${name}
 ${'-'.repeat(40)}
 
 CONTACT INFORMATION:
   Name: ${name}
-  Email: ${email}
+  Email: ${contactEmail}
   Phone: ${phone}
   Company: ${company}
 
-  ${message ? `\NOTES:\n${message}` : ''}
+  ${message ? `NOTES:\n${message}` : ''}
 
 ${'-'.repeat(40)}
 SELECTED TECHNOLOGIES:
@@ -110,9 +101,10 @@ ${'-'.repeat(40)}
 This request was sent from my interactive portfolio shop.
         `.trim();
 
-    this.checkoutEmail.set({
-      subject: `Project Request from ${name}`,
-      body: emailBody,
+      this.checkoutEmail.set({
+        subject: `Project Request from ${name}`,
+        body: emailBody,
+      });
     });
   }
 

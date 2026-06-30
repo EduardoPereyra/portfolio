@@ -69,7 +69,7 @@ describe('Cart Component', () => {
     expect(component.contactForm().touched()).toBe(true);
   });
 
-  it('should reset contact form and cart after successful checkout', async () => {
+  it('should reset contact form and cart after successful checkout modal close', async () => {
     const mockItems = [{ id: '1', name: 'TypeScript' }] as SkillDTO[];
     mockStore.select.mockImplementation((selector: any) => {
       if (selector === CartSelectors.selectCartSkills) {
@@ -97,8 +97,10 @@ describe('Cart Component', () => {
     vi.spyOn(event, 'preventDefault');
 
     component.handleCheckout(event);
+    component.onCloseModal({ type: 'success', message: 'Opening Email App' });
 
     expect(event.preventDefault).toHaveBeenCalled();
+    expect(mockStore.dispatch).toHaveBeenCalledWith(CartActions.clearCart());
     expect(component.contactModel().fullName).toBe('');
     expect(component.contactModel().email).toBe('');
   });
@@ -152,7 +154,10 @@ describe('Cart Component', () => {
     component.handleCheckout(event);
 
     expect(event.preventDefault).toHaveBeenCalled();
-    expect(mockStore.dispatch).toHaveBeenCalledWith(CartActions.clearCart());
+    expect(component.checkoutEmail()).toEqual({
+      subject: 'Project Request from John Doe',
+      body: expect.stringContaining('SELECTED TECHNOLOGIES:'),
+    });
   });
 
   it('should select error state from store', async () => {

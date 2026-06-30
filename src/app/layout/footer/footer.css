@@ -1,0 +1,5 @@
+.footer-shell {
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
+  background: linear-gradient(135deg, rgba(4, 120, 87, 0.95), rgba(15, 81, 63, 0.95));
+  box-shadow: 0 -18px 60px rgba(6, 78, 59, 0.1);
+}

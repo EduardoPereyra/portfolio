@@ -13,7 +13,7 @@ import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { Store } from '@ngrx/store';
 import { selectCartTotalSkills } from '../../store/selectors/cart.selectors';
 import { form, FormField } from '@angular/forms/signals';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 
 interface SearchData {
   search: string;
@@ -21,7 +21,7 @@ interface SearchData {
 
 @Component({
   selector: 'app-navbar',
-  imports: [FontAwesomeModule, FormField],
+  imports: [FontAwesomeModule, FormField, RouterLink],
   templateUrl: './navbar.html',
   styleUrl: './navbar.css',
 })

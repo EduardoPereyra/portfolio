@@ -14,13 +14,15 @@
         </div>
       }
       <!-- <div class="bg-slate-100 w-full py-4"> -->
-      <img
-        class="w-auto h-16 mx-auto max-w-4/5 object-contain"
-        [ngSrc]="`${item.img}`"
-        alt="{{ item.name }}"
-        width="60"
-        height="20"
-      />
+      @if (item.img) {
+        <img
+          class="w-auto h-16 mx-auto max-w-4/5 object-contain"
+          [ngSrc]="item.img"
+          alt="{{ item.name }}"
+          width="60"
+          height="20"
+        />
+      }
       <!-- </div> -->
       <p class="text-center mt-2 text-xl text-emerald-700">{{ item.name }}</p>
       <div

@@ -3,10 +3,11 @@ import { Component, inject, OnInit, signal } from '@angular/core';
 import { Frame } from '../frame/frame';
 import { HttpClient } from '@angular/common/http';
 import { Modal } from '../modals/modal/modal';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home',
-  imports: [Frame, Modal],
+  imports: [Frame, Modal, RouterLink],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
